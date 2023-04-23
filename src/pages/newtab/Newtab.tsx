@@ -21,10 +21,10 @@ const Newtab = () => {
 
   return (
     <div className="bg-[#191919]">
-      <div className="px-8 py-8">
+      <div className="px-8 py-12 max-w-6xl mx-auto">
         <div className="pl-12">
           <h1 className="text-3xl text-white font-spaceMono">
-            Good evening, here are your Chrome bookmarks
+            🤠 Howdy, here are your Chrome bookmarks
           </h1>
         </div>
         {bookmarks.map((folder) => (
@@ -35,23 +35,25 @@ const Newtab = () => {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
               {folder?.children.map((bookmark) => (
                 <a
-                  className="relative flex items-center space-x-3 rounded-sm bg-[#2F2F2F] px-6 py-7 shadow-sm text-white font-spaceMono"
+                  className="relative flex items-center space-x-3 rounded-sm bg-[#2F2F2F] shadow-sm text-white font-spaceMono"
                   href={bookmark.url}
                   target="_blank"
                 >
-                  <div className="flex flex-col space-y-3">
-                    <div className="flex flex-row space-x-3">
-                      <img
-                        src={bookmark.faviconUrl}
-                        alt=""
-                        className="w-[16px] h-[16px] rounded-sm"
-                      />
-                      <h1 className="font-spaceMono">{bookmark.title}</h1>
-                    </div>
-                    <div>
-                      <p className="underline underline-offset-4 decoration-slate-100/30 font-spaceMono">
-                        {bookmark.url?.split("/")[2]}
-                      </p>
+                  <div className="bg-white w-full h-full bg-opacity-0 transition ease-in-out  hover:bg-opacity-10">
+                    <div className="flex flex-col space-y-3 px-6 py-7 ">
+                      <div className="flex flex-row space-x-4">
+                        <img
+                          src={bookmark.faviconUrl}
+                          alt=""
+                          className="w-[16px] h-[16px] rounded-sm"
+                        />
+                        <h1 className="font-spaceMono">{bookmark.title}</h1>
+                      </div>
+                      <div>
+                        <p className="underline underline-offset-4 decoration-slate-100/30 font-spaceMono">
+                          {bookmark.url?.split("/")[2]}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </a>
