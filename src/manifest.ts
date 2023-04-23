@@ -13,7 +13,16 @@ const manifest: Manifest.WebExtensionManifest = {
     service_worker: "src/pages/background/index.js",
     type: "module",
   },
-  permissions: ["bookmarks", "tabs", "favicon"],
+  permissions: [
+    "bookmarks",
+    "tabs",
+    "favicon",
+    "<all_urls>",
+    "chrome://favicon/",
+    "chrome://favicon/*",
+    "chrome://_favicon/*",
+    "tab",
+  ],
   action: {
     default_popup: "src/pages/popup/index.html",
     default_icon: "icon-34.png",

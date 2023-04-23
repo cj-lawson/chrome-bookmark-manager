@@ -6,4 +6,5 @@ export interface Bookmark {
   id: string;
   parentId?: string;
   children?: Bookmark[];
+  faviconUrl?: string;
 }
