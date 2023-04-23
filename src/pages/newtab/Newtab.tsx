@@ -23,17 +23,19 @@ const Newtab = () => {
     <div className="bg-[#191919]">
       <div className="px-8 py-8">
         <div className="pl-12">
-          <h1 className="text-3xl text-white">
-            Here are your Google Chrome bookmarks
+          <h1 className="text-3xl text-white font-spaceMono">
+            Good evening, here are your Chrome bookmarks
           </h1>
         </div>
         {bookmarks.map((folder) => (
           <div className="flex flex-col justify-center mb-8 p-12">
-            <h1 className="text-[#989AA7] mb-4 text-lg">{folder.title}</h1>
+            <h1 className="text-[#989AA7] mb-4 text-lg font-spaceMono">
+              {folder.title}
+            </h1>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
               {folder?.children.map((bookmark) => (
                 <a
-                  className="relative flex items-center space-x-3 rounded-sm bg-[#2F2F2F] px-6 py-5 shadow-sm text-white"
+                  className="relative flex items-center space-x-3 rounded-sm bg-[#2F2F2F] px-6 py-7 shadow-sm text-white font-spaceMono"
                   href={bookmark.url}
                   target="_blank"
                 >
@@ -44,10 +46,10 @@ const Newtab = () => {
                         alt=""
                         className="w-[16px] h-[16px] rounded-sm"
                       />
-                      <h1>{bookmark.title}</h1>
+                      <h1 className="font-spaceMono">{bookmark.title}</h1>
                     </div>
                     <div>
-                      <p className="underline underline-offset-4 decoration-slate-100/30">
+                      <p className="underline underline-offset-4 decoration-slate-100/30 font-spaceMono">
                         {bookmark.url?.split("/")[2]}
                       </p>
                     </div>
