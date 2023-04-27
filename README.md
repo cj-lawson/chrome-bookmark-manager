@@ -1,8 +1,9 @@
-<div align="center">
-<img src="![screenshot](https://user-images.githubusercontent.com/29825015/234994542-19703246-5bbd-47cd-8192-17f59265a816.png)" alt="logo"/>
+# Chrome Bookmark Manager
 
+A minimalistic Chrome extension for managing my bookmarks
 
-</div>
+![screenshot](https://user-images.githubusercontent.com/29825015/234995587-4481dc9b-fceb-4d10-99f0-64a2a67fb15d.png)
+
 
 
 
