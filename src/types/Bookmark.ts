@@ -5,6 +5,5 @@ export interface Bookmark {
   dateGroupModified?: number;
   id: string;
   parentId?: string;
-  children?: Bookmark[];
   faviconUrl?: string;
 }
