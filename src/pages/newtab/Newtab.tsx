@@ -37,18 +37,19 @@ const Newtab = () => {
                       key={folder.id}
                       className="flex flex-col justify-center mb-12"
                     >
-                      <h1 className="text-[#989AA7] mb-4 text-lg font-spaceMono">
+                      <h1 className="text-white mb-4 text-lg font-spaceMono font-semibold">
                         {folder.title}
                       </h1>
                       <ul className="text-white grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                         {folderBookmarks.map((bookmark) => (
                           <li
                             key={bookmark.id}
-                            className="rounded-sm bg-[#2F2F2F] shadow-sm"
+                            className="rounded-sm bg-[#333237] shadow-sm"
                           >
                             <a
                               href={bookmark.url}
                               className="h-full w-full flex items-center text-white font-spaceMono px-6 py-5"
+                              target="_blank"
                             >
                               <div className="flex flex-col space-y-3">
                                 <div className="flex flex-row space-x-4 items-start">

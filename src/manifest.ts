@@ -13,16 +13,7 @@ const manifest: Manifest.WebExtensionManifest = {
     service_worker: "src/pages/background/index.js",
     type: "module",
   },
-  permissions: [
-    "bookmarks",
-    "tabs",
-    "favicon",
-    "<all_urls>",
-    "chrome://favicon/",
-    "chrome://favicon/*",
-    "chrome://_favicon/*",
-    "tab",
-  ],
+  permissions: ["bookmarks"],
   action: {
     default_popup: "src/pages/popup/index.html",
     default_icon: "icon-34.png",
@@ -35,7 +26,7 @@ const manifest: Manifest.WebExtensionManifest = {
   },
   content_scripts: [
     {
-      matches: ["http://*/*", "https://*/*", "<all_urls>"],
+      matches: ["<all_urls>"],
       js: ["src/pages/content/index.js"],
       css: ["contentStyle.css"],
     },
@@ -43,13 +34,8 @@ const manifest: Manifest.WebExtensionManifest = {
   devtools_page: "src/pages/devtools/index.html",
   web_accessible_resources: [
     {
-      resources: [
-        "contentStyle.css",
-        "icon-128.png",
-        "icon-34.png",
-        "_favicon/*",
-      ],
-      matches: ["<all_urls>"],
+      resources: ["contentStyle.css"],
+      matches: [],
       extension_ids: ["*"],
     },
   ],
