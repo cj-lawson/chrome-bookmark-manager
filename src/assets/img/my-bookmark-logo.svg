@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1967.719" height="368" viewBox="0 0 1967.719 368">
+  <g id="Group_21" data-name="Group 21" transform="translate(-3247.281 2859)">
+    <g id="Group_19" data-name="Group 19" transform="translate(-109.812 1480)">
+      <g id="Group_20" data-name="Group 20" transform="translate(3357.092 -4252)">
+        <path id="Rectangle_35" data-name="Rectangle 35" d="M40,0h82a40,40,0,0,1,40,40V146a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V40A40,40,0,0,1,40,0Z" transform="translate(48.719)" fill="#fff"/>
+        <path id="Polygon_1" data-name="Polygon 1" d="M40.182,29.179a15,15,0,0,1,27.193,0l30.24,64.9a15,15,0,0,1-13.6,21.335H23.538a15,15,0,0,1-13.6-21.335Z" transform="translate(97.48 236.489) rotate(-155)" fill="#fff"/>
+        <path id="Polygon_2" data-name="Polygon 2" d="M40.182,29.179a15,15,0,0,1,27.193,0l30.24,64.9a15,15,0,0,1-13.6,21.335H23.538a15,15,0,0,1-13.6-21.335Z" transform="translate(259.854 191.034) rotate(155)" fill="#fff"/>
+      </g>
+    </g>
+    <text id="My_Bookmark" data-name="My Bookmark" transform="translate(3607 -2581)" fill="#fff" font-size="248" font-family="SpaceMono-Regular, Space Mono" letter-spacing="-0.025em"><tspan x="0" y="0">My Bookmark</tspan></text>
+  </g>
+</svg>
