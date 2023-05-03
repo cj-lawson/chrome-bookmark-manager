@@ -2,8 +2,10 @@
 
 A minimalistic Chrome extension for managing my bookmarks
 
-![screenshot](https://user-images.githubusercontent.com/29825015/234995587-4481dc9b-fceb-4d10-99f0-64a2a67fb15d.png)
+
+![myBookmark-screenshot-dark](https://user-images.githubusercontent.com/29825015/236052880-7a1d9b3c-bffe-44e0-a05f-98e052036366.png)
 
 
+![myBookmark-screenshot-light](https://user-images.githubusercontent.com/29825015/236052898-3241de64-55cb-4bf4-9763-ead33c0e01b4.png)
 
 
