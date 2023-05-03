@@ -31,12 +31,7 @@ const Newtab = () => {
           <ul>
             <>
               {Object.keys(filteredFolders).map((folderId) => {
-                if (
-                  folderId === "0" ||
-                  folderId === "1" ||
-                  folderId === "3" ||
-                  folderId === "2"
-                ) {
+                if (folderId === "0" || folderId === "1") {
                   return null;
                 }
                 const folder = filteredFolders[folderId];
