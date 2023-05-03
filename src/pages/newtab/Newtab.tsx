@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import useBookmarksStore from "../../store/bookmarkStore";
 import Navbar from "@src/components/Navbar";
 
@@ -6,8 +6,7 @@ const Newtab = () => {
   const retrieveBookmarks = useBookmarksStore(
     (state) => state.retrieveBookmarks
   );
-  const foldersById = useBookmarksStore((state) => state.foldersById);
-  const bookmarksById = useBookmarksStore((state) => state.bookmarksById);
+
   const query = useBookmarksStore((state) => state.query);
   const setQuery = useBookmarksStore((state) => state.setQuery);
   const searchBarRef = useRef<HTMLInputElement>(null);
@@ -21,16 +20,13 @@ const Newtab = () => {
     retrieveBookmarks();
   }, [retrieveBookmarks]);
 
-  console.log(filteredFolders);
-  console.log(filteredBookmarks);
-
   return (
     <>
       <div className="h-full w-full flex flex-col items-center">
         <div className="max-w-6xl px-12 w-full mt-4 mb-8">
           <Navbar query={query} onChange={setQuery} ref={searchBarRef} />
         </div>
-        <div className="max-w-6xl py-8 px-12 ">
+        <div className="min-w-6xl max-w-6xl py-8 px-12 w-full">
           <ul>
             <>
               {Object.keys(filteredFolders).map((folderId) => {
