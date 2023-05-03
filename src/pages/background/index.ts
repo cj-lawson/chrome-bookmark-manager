@@ -27,9 +27,6 @@ export const parseChromeBookmarks = (chromeBookmarks: ChromeBookmark[]) => {
       if (node.children) {
         foldersById[node.id] = withoutChildren(node);
         parseBookmarkNodes(node.children);
-        // if(node.title = 'Other Bookmarks' || 'Mobile Bookmarks'){
-
-        // }
       } else {
         bookmarksById[node.id] = node;
         const faviconUrl = `https://s2.googleusercontent.com/s2/favicons?domain=${node.url}&sz=32`;

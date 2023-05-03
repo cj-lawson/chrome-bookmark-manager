@@ -1,9 +1,19 @@
 import logo from "@assets/img/my-bookmark-logo.svg";
+import React, { ChangeEvent, forwardRef } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { FaGithub } from "react-icons/fa";
 import { BiSearch } from "react-icons/bi";
 
-const Navbar = () => {
+interface Props {
+  query: string;
+  onChange: (query: string) => void;
+}
+
+const Navbar = forwardRef<HTMLInputElement, Props>((props, ref) => {
+  const { query, onChange } = props;
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    onChange(e.target.value);
+  };
   return (
     <div className="w-full grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4">
       <div className="order-1 flex flex-row items-center">
@@ -19,6 +29,9 @@ const Navbar = () => {
               <BiSearch className="h-5 w-5" aria-hidden="true" />
             </div>
             <input
+              ref={ref}
+              onChange={handleInputChange}
+              value={query}
               id="search"
               className="block w-full rounded-md border-0 bg-[#333237] py-1.5 pl-10 pr-3 text-white focus:ring-1 focus:ring-[#212025] focus:ring-offset-1 focus:ring-offset-[#212025] sm:text-sm sm:leading-6"
               placeholder="Search"
@@ -43,6 +56,6 @@ const Navbar = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Navbar;

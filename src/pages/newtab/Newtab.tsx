@@ -1,23 +1,31 @@
-import { useState, useEffect } from "react";
-import { Bookmark } from "@src/types/Bookmark";
+import { useState, useEffect, useRef } from "react";
 import useBookmarksStore from "../../store/bookmarkStore";
 import Navbar from "@src/components/Navbar";
 
 const Newtab = () => {
-  const { foldersById, bookmarksById, retrieveBookmarks } = useBookmarksStore();
+  const retrieveBookmarks = useBookmarksStore(
+    (state) => state.retrieveBookmarks
+  );
+  const foldersById = useBookmarksStore((state) => state.foldersById);
+  const bookmarksById = useBookmarksStore((state) => state.bookmarksById);
+  const query = useBookmarksStore((state) => state.query);
+  const setQuery = useBookmarksStore((state) => state.setQuery);
+  const searchBarRef = useRef<HTMLInputElement>(null);
+
+  console.log(query);
+
+  console.log(foldersById);
+  console.log(bookmarksById);
 
   useEffect(() => {
     retrieveBookmarks();
   }, [retrieveBookmarks]);
 
-  console.log(foldersById);
-  console.log(bookmarksById);
-
   return (
     <>
       <div className="h-full w-full flex flex-col items-center">
         <div className="max-w-6xl px-12 w-full mt-4 mb-8">
-          <Navbar />
+          <Navbar query={query} onChange={setQuery} ref={searchBarRef} />
         </div>
         <div className="max-w-6xl py-8 px-12 ">
           <ul>
@@ -44,7 +52,7 @@ const Newtab = () => {
                         {folderBookmarks.map((bookmark) => (
                           <li
                             key={bookmark.id}
-                            className="rounded-sm bg-[#333237] shadow-sm"
+                            className="rounded-sm bg-[#333237] shadow-sm hover:bg-[#37363b] transition eas-in-out"
                           >
                             <a
                               href={bookmark.url}
