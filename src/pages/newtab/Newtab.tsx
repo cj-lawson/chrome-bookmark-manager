@@ -44,14 +44,14 @@ const Newtab = () => {
                       key={folder.id}
                       className="flex flex-col justify-center mb-12"
                     >
-                      <h1 className="text-white mb-4 text-lg font-spaceMono font-semibold">
+                      <h1 className="text-[#212025] dark:text-white mb-4 text-lg font-spaceMono font-semibold">
                         {folder.title}
                       </h1>
                       <ul className="text-white grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                         {folderBookmarks.map((bookmark) => (
                           <li
                             key={bookmark.id}
-                            className="rounded-sm bg-[#333237] shadow-sm hover:bg-[#37363b] transition eas-in-out"
+                            className="rounded-sm bg-white dark:bg-[#333237] shadow-sm dark:shadow-sm dark:hover:bg-[#37363b] hover:bg-[#e6e6e6] transition eas-in-out border border-1 border-[#212025] border-opacity-10"
                           >
                             <a
                               href={bookmark.url}
@@ -66,10 +66,10 @@ const Newtab = () => {
                                     className="w-[18px] h-[18px] rounded-sm"
                                   />
                                   <div className="flex flex-col">
-                                    <h3 className="mb-3 font-semibold font-spaceMono line-clamp-2">
+                                    <h3 className="text-[#212025] dark:text-white mb-3 font-semibold font-spaceMono line-clamp-2">
                                       {bookmark.title}
                                     </h3>
-                                    <p className="underline underline-offset-4 decoration-slate-100/30 font-spaceMono">
+                                    <p className="text-[#212025] text-opacity-80 decoration-slate-900/70 dark:text-white dark:text-opacity-70 underline underline-offset-4 dark:decoration-slate-100/30 font-spaceMono">
                                       {bookmark.url?.split("/")[2]}
                                     </p>
                                   </div>
@@ -92,3 +92,5 @@ const Newtab = () => {
 };
 
 export default Newtab;
+
+// border border-1 border-[#212025] border-opacity-50

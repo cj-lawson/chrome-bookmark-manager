@@ -8,8 +8,8 @@ interface BookmarksState {
   bookmarksById: Record<string, any>;
   filteredBookmarks: Record<string, any>;
   filteredFolders: Record<string, any>;
-
   retrieveBookmarks: () => Promise<void>;
+  theme: string;
 }
 
 const useBookmarksStore = create<BookmarksState>((set) => ({
@@ -18,6 +18,7 @@ const useBookmarksStore = create<BookmarksState>((set) => ({
   bookmarksById: {},
   filteredBookmarks: {},
   filteredFolders: {},
+  theme: localStorage.theme,
 
   retrieveBookmarks: async () => {
     const chromeBookmarks = await getBookmarks();

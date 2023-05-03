@@ -3,5 +3,10 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#212025] text-white;
+  @apply bg-[#F9FBFC] text-[#212025];
+  @apply dark:bg-[#212025] dark:text-white;
+}
+
+.without-ring {
+  @apply focus:ring-0 focus:ring-offset-0;
 }
