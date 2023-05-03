@@ -37,7 +37,5 @@ export const parseChromeBookmarks = (chromeBookmarks: ChromeBookmark[]) => {
 
   parseBookmarkNodes(chromeBookmarks);
 
-  console.log(Object.keys(foldersById));
-
   return { foldersById, bookmarksById };
 };

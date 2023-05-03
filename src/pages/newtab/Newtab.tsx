@@ -12,14 +12,17 @@ const Newtab = () => {
   const setQuery = useBookmarksStore((state) => state.setQuery);
   const searchBarRef = useRef<HTMLInputElement>(null);
 
-  console.log(query);
-
-  console.log(foldersById);
-  console.log(bookmarksById);
+  const filteredFolders = useBookmarksStore((state) => state.filteredFolders);
+  const filteredBookmarks = useBookmarksStore(
+    (state) => state.filteredBookmarks
+  );
 
   useEffect(() => {
     retrieveBookmarks();
   }, [retrieveBookmarks]);
+
+  console.log(filteredFolders);
+  console.log(filteredBookmarks);
 
   return (
     <>
@@ -30,12 +33,12 @@ const Newtab = () => {
         <div className="max-w-6xl py-8 px-12 ">
           <ul>
             <>
-              {Object.keys(foldersById).map((folderId) => {
+              {Object.keys(filteredFolders).map((folderId) => {
                 if (folderId === "0" || folderId === "1") {
                   return null;
                 }
-                const folder = foldersById[folderId];
-                const folderBookmarks = Object.values(bookmarksById).filter(
+                const folder = filteredFolders[folderId];
+                const folderBookmarks = Object.values(filteredBookmarks).filter(
                   (bookmark) => bookmark.parentId === folderId
                 );
 

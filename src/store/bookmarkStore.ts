@@ -6,6 +6,9 @@ interface BookmarksState {
   setQuery: (query: string) => void;
   foldersById: Record<string, any>;
   bookmarksById: Record<string, any>;
+  filteredBookmarks: Record<string, any>;
+  filteredFolders: Record<string, any>;
+
   retrieveBookmarks: () => Promise<void>;
 }
 
@@ -13,6 +16,8 @@ const useBookmarksStore = create<BookmarksState>((set) => ({
   query: "",
   foldersById: {},
   bookmarksById: {},
+  filteredBookmarks: {},
+  filteredFolders: {},
 
   retrieveBookmarks: async () => {
     const chromeBookmarks = await getBookmarks();
@@ -20,6 +25,8 @@ const useBookmarksStore = create<BookmarksState>((set) => ({
     set(() => ({
       foldersById: parsedBookmarks.foldersById,
       bookmarksById: parsedBookmarks.bookmarksById,
+      filteredFolders: parsedBookmarks.foldersById,
+      filteredBookmarks: parsedBookmarks.bookmarksById,
     }));
   },
 
@@ -39,19 +46,17 @@ const useBookmarksStore = create<BookmarksState>((set) => ({
           matchingFolderIds.add(bookmark.parentId);
         }
       });
-
       //   Filter Folders based on matchingFolderIds
       Object.entries(state.foldersById).forEach(([folderId, folder]) => {
         if (matchingFolderIds.has(folderId)) {
           filteredFoldersById[folderId] = folder;
         }
       });
-
       return {
         ...state,
         query,
-        bookmarksById: filteredBookmarksById,
-        foldersById: filteredFoldersById,
+        filteredBookmarks: filteredBookmarksById,
+        filteredFolders: filteredFoldersById,
       };
     }),
 }));
