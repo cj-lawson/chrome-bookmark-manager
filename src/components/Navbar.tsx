@@ -24,7 +24,7 @@ const Navbar = forwardRef<HTMLInputElement, Props>((props, ref) => {
   };
 
   return (
-    <div className="w-full grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4">
+    <div className="w-full grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4 sticky top-0 ">
       <div className="order-1 flex flex-row items-center">
         <>
           {colorTheme === "dark" ? (

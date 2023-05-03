@@ -19,18 +19,24 @@ const Newtab = () => {
   useEffect(() => {
     retrieveBookmarks();
   }, [retrieveBookmarks]);
-
+  console.log(filteredBookmarks);
+  console.log(filteredFolders);
   return (
     <>
       <div className="h-full w-full flex flex-col items-center">
-        <div className="max-w-6xl px-12 w-full mt-4 mb-8">
+        <div className="max-w-6xl px-12 w-full mt-4 pt-4 pb-4 mb-8 bg-[#F9FBFC] dark:bg-[#212025]">
           <Navbar query={query} onChange={setQuery} ref={searchBarRef} />
         </div>
         <div className="min-w-6xl max-w-6xl py-8 px-12 w-full">
           <ul>
             <>
               {Object.keys(filteredFolders).map((folderId) => {
-                if (folderId === "0" || folderId === "1") {
+                if (
+                  folderId === "0" ||
+                  folderId === "1" ||
+                  folderId === "3" ||
+                  folderId === "2"
+                ) {
                   return null;
                 }
                 const folder = filteredFolders[folderId];
