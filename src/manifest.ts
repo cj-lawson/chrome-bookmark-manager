@@ -26,7 +26,7 @@ const manifest: Manifest.WebExtensionManifest = {
   },
   content_scripts: [
     {
-      matches: ["<all_urls>"],
+      matches: ["<all_urls>", "*://*.mozilla.org/*"],
       js: ["src/pages/content/index.js"],
       css: ["contentStyle.css"],
     },
@@ -35,7 +35,7 @@ const manifest: Manifest.WebExtensionManifest = {
   web_accessible_resources: [
     {
       resources: ["contentStyle.css"],
-      matches: [],
+      matches: ["<all_urls>"],
       extension_ids: ["*"],
     },
   ],

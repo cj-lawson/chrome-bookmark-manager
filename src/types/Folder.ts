@@ -8,4 +8,5 @@ export interface Folder {
   parentId?: string;
   isHidden: boolean;
   bookmarks: Bookmark[];
+  children?: Bookmark[];
 }

@@ -1,4 +1,3 @@
-import { Bookmark } from "@src/types/Bookmark";
 import { ChromeBookmark } from "../../types/ChromeBookmark";
 
 export const getBookmarks = async () => {
@@ -16,6 +15,7 @@ const withoutChildren = (bookmark: ChromeBookmark) => ({
   parentId: bookmark.parentId,
   unmodifiable: bookmark.unmodifiable,
   faviconUrl: bookmark.faviconUrl,
+  children: bookmark.children,
 });
 
 export const parseChromeBookmarks = (chromeBookmarks: ChromeBookmark[]) => {

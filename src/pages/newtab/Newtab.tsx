@@ -34,6 +34,9 @@ const Newtab = () => {
                 if (folderId === "0" || folderId === "1") {
                   return null;
                 }
+                if (filteredFolders[folderId].children.length === 0) {
+                  return null;
+                }
                 const folder = filteredFolders[folderId];
                 const folderBookmarks = Object.values(filteredBookmarks).filter(
                   (bookmark) => bookmark.parentId === folderId
